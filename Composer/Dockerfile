@@ -17,6 +17,8 @@ COPY packages/lib/eslint-plugin-bfcomposer/package.json ./packages/lib/eslint-pl
 COPY packages/extensions/obiformeditor/package.json ./packages/extensions/obiformeditor/
 COPY packages/extensions/visual-designer/package.json ./packages/extensions/visual-designer/
 
+RUN apk add --no-cache git
+
 # run yarn install as a distinct layer
 RUN yarn install
 
