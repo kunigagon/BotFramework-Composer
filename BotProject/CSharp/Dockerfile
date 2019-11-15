@@ -16,4 +16,5 @@ RUN dotnet publish -o out
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1-alpine AS runtime
 WORKDIR /app/botproject/csharp
 COPY --from=build /app/botproject/csharp/out .
+COPY ComposerDialogs/ ./ComposerDialogs
 CMD ["dotnet", "BotProject.dll"]
