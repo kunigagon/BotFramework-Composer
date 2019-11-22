@@ -8,8 +8,8 @@ services:
       # expose 9229 for debugging
       # - "9229:9229"
     volumes:
-      - /srv/composer-MyBots:/MyBots
-      - /srv/composer-BotProject:/BotProject
+      - /srv/MyBots:/MyBots
+      - /srv/BotProject:/BotProject
     environment:
       - NODE_ENV=container
     # command:
@@ -21,7 +21,7 @@ services:
     ports:
       - "3979:80"
     volumes:
-      - /srv/composer-MyBots:/app/MyBots
+      - /srv/MyBots:/app/MyBots
   directline:
     build: offline-directline
     ports:
