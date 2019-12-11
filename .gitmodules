@@ -1,0 +1,3 @@
+[submodule "offline-directline/offline-directline-code"]
+	path = offline-directline/offline-directline-code
+	url = https://github.com/romansavrulin/offline-directline.git

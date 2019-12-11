@@ -3,11 +3,10 @@ services:
   composer:
     build: Composer
     ports:
-      - "3000:3000"
+      - "3000:5000"
     volumes:
-      - ~/Documents/Composer:/Bots
-      - ./BotProject:/BotProject
-      - ./.appdata:/appdata
+      - /srv/MyBots:/MyBots
+      - /srv/BotProject:/BotProject
     environment:
       COMPOSER_BOTS_FOLDER: /Bots
       COMPOSER_RUNTIME_FOLDER: /BotProject/Templates
@@ -19,4 +18,13 @@ services:
     ports:
       - "3979:80"
     volumes:
-      - ~/Documents/Composer:/Bots
+      - /srv/MyBots:/app/MyBots
+  directline:
+    build: offline-directline
+    ports:
+      - "5003:3000"
+  webchat:
+    ports:
+      - "5002:5000"
+    build: webchat
+
