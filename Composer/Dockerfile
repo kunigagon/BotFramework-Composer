@@ -10,9 +10,12 @@
 FROM node:12-alpine as build
 
 WORKDIR /src/Composer
-COPY . .
+COPY yarn.lock .
+COPY package.json .
 # run yarn install as a distinct layer
 RUN yarn install --frozen-lock-file
+
+COPY . .
 ENV NODE_OPTIONS "--max-old-space-size=4096"
 ENV NODE_ENV "production"
 RUN yarn build:prod
