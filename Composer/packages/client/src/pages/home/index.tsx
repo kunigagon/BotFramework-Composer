@@ -5,7 +5,6 @@
 import { jsx } from '@emotion/core';
 import React, { useCallback, useContext, useEffect } from 'react';
 import formatMessage from 'format-message';
-import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { RouteComponentProps } from '@reach/router';
 
@@ -17,30 +16,6 @@ import * as home from './styles';
 import { ItemContainer } from './ItemContainer';
 import { RecentBotList } from './RecentBotList';
 import { ExampleList } from './ExampleList';
-
-const linksButtom = [
-  {
-    to: 'https://aka.ms/BF-Composer-Getting-Started',
-    text: formatMessage('Getting Started'),
-    css: home.linkInfo,
-  },
-  {
-    to: 'https://aka.ms/BF-Composer-Build-First-Bot',
-    text: formatMessage('Build your first bot'),
-    css: home.linkInfo,
-  },
-];
-
-const turtorials = [
-  {
-    title: formatMessage('Tutorial #1'),
-    content: formatMessage('Coming soon...'),
-  },
-  {
-    title: formatMessage('Tutorial #2'),
-    content: formatMessage('Coming soon...'),
-  },
-];
 
 const Home: React.FC<RouteComponentProps> = () => {
   const { state, actions } = useContext(StoreContext);
@@ -174,33 +149,6 @@ const Home: React.FC<RouteComponentProps> = () => {
               />
             </div>
           )}
-          <div css={home.leftContainer}>
-            <div css={home.newBotContainer}>
-              {turtorials.map((item, index) => (
-                <ItemContainer key={index} title={item.title} content={item.content} disabled />
-              ))}
-              <div css={home.linkContainer}>
-                <div>
-                  {formatMessage(
-                    'Bot Framework provides the most comprehensive experience for building conversation applications.'
-                  )}
-                </div>
-                {linksButtom.map(link => {
-                  return (
-                    <Link
-                      href={link.to}
-                      tabIndex={-1}
-                      key={'homePageLeftLinks-' + link.text}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div css={link.css}>{link.text}</div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
         </div>
         <div css={home.rightPage}>
           <h3 css={home.bluetitle}>{formatMessage(`Examples`)}</h3>
