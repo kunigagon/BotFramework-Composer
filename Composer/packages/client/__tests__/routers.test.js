@@ -30,7 +30,7 @@ describe('<Router/> router test', () => {
     } = renderWithRouter(<AppTest />);
 
     const appContainer = container;
-    expect(appContainer.innerHTML).toMatch('Bot Framework Composer');
+    expect(appContainer.innerHTML).toMatch('ChatBot Composer from CheckMobile');
 
     navigate('/language-understanding');
     expect(appContainer.innerHTML).toMatch('Setting');

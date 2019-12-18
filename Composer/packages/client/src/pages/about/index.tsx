@@ -19,12 +19,11 @@ export const About: React.FC<RouteComponentProps> = () => {
           <div css={about.version}>{formatMessage(`Release: Preview 1.0`)}</div>
           <div css={about.description}>
             <p>
-              {formatMessage(`Bot Framework Composer is an integrated development environment (IDE) for building
-            bots and other types of conversational software with the Microsoft Bot Framework technology stack.
-            Inside this web-based tool you will find everything you need to build a modern, state-of-the-art conversational experience.`)}
+              {formatMessage(`ChatBot solution from CheckMobile is an integrated development environment (IDE) for building
+            bots and other types of conversations.`)}
             </p>
             <p>
-              {formatMessage(`Bot Framework Composer enables teams working to create bots to build all kinds of conversational experiences that use the
+              {formatMessage(`ChatBot solution from CheckMobile enables teams working to create bots to build all kinds of conversational experiences that use the
             latest components from the Bot Framework: SDK, LG, LU, and declarative file formats, all without writing code.`)}
               <Link
                 href={'https://github.com/microsoft/BotFramework-Composer/blob/stable/toc.md'}

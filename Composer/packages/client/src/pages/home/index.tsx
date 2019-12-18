@@ -31,12 +31,6 @@ const linksButtom = [
   },
 ];
 
-const comingSoonLink = {
-  to: '/home',
-  text: formatMessage('Coming soon!'),
-  css: home.bluetitle,
-};
-
 const turtorials = [
   {
     title: formatMessage('Tutorial #1'),
@@ -130,10 +124,10 @@ const Home: React.FC<RouteComponentProps> = () => {
       <ToolBar toolbarItems={toolbarItems} />
       <div css={home.page}>
         <div css={home.leftPage}>
-          <h1 css={home.title}>{formatMessage(`Bot Framework Composer`)}</h1>
+          <h1 css={home.title}>{formatMessage(`ChatBot Composer from CheckMobile`)}</h1>
           <div css={home.introduction}>
             {formatMessage(
-              'Bot Framework Composer is an integrated development environment (IDE) for building bots and other types of conversational software with the Microsoft Bot Framework technology stack'
+              'ChatBot Composer from CheckMobile is an integrated development environment (IDE) for building bots and other types of conversations'
             )}
           </div>
           <div css={home.newBotContainer}>
@@ -181,12 +175,6 @@ const Home: React.FC<RouteComponentProps> = () => {
             </div>
           )}
           <div css={home.leftContainer}>
-            <h2 css={home.subtitle}>
-              {formatMessage('Video tutorials:')}&nbsp;
-              <Link href={comingSoonLink.to} tabIndex={-1} key={comingSoonLink.text} target={'_blank'}>
-                <span css={comingSoonLink.css}>{comingSoonLink.text}</span>
-              </Link>
-            </h2>
             <div css={home.newBotContainer}>
               {turtorials.map((item, index) => (
                 <ItemContainer key={index} title={item.title} content={item.content} disabled />

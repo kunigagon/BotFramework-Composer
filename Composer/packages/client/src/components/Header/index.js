@@ -13,7 +13,7 @@ export const Header = props => {
   return (
     <div css={headerContainer}>
       <img style={{ marginLeft: '9px', marginTop: '6px' }} src={composerIcon} />
-      <span css={title}>{formatMessage('Bot Framework Composer')}</span>
+      <span css={title}>{formatMessage('ChatBot Composer from CheckMobile')}</span>
       <span css={botName}>{props.botName}</span>
     </div>
   );

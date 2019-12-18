@@ -8,7 +8,6 @@ import { JsonEditor } from '@bfc/code-editor';
 import formatMessage from 'format-message';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { ChoiceGroup } from 'office-ui-fabric-react/lib/ChoiceGroup';
-import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 
 import { StoreContext } from '../../../store';
@@ -22,7 +21,7 @@ const hostControlLabels = {
   integrationSlot: formatMessage('In test'),
   botSettings: formatMessage('Settings'),
   botSettingDescription: formatMessage(
-    'Settings contains detailed information about your bot. For security reasons, they are hidden by default. To test your bot or publish to Azure, you may need to provide these settings.'
+    'Settings contains detailed information about your bot. For security reasons, they are hidden by default.'
   ),
   learnMore: formatMessage('Learn more.'),
 };
@@ -76,16 +75,6 @@ export const DialogSettings = () => {
       <p>
         {hostControlLabels.botSettingDescription}
         &nbsp;
-        <Link
-          href={
-            absHosted
-              ? 'https://aka.ms/absh/docs/settings'
-              : 'https://github.com/microsoft/BotFramework-Composer/blob/stable/docs/deploy-bot.md'
-          }
-          target="_blank"
-        >
-          {hostControlLabels.learnMore}
-        </Link>
       </p>
       {absHosted ? <ChoiceGroup options={slots} onChange={changeSlot} css={slotChoice} selectedKey={slot} /> : null}
     </div>

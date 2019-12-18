@@ -10,6 +10,6 @@ describe('<Header />', () => {
   it('should render the header', () => {
     const { container } = render(<Header />);
 
-    expect(container).toHaveTextContent('Bot Framework Composer');
+    expect(container).toHaveTextContent('ChatBot Composer from CheckMobile');
   });
 });
