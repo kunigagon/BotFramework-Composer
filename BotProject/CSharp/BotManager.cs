@@ -21,6 +21,9 @@ using Newtonsoft.Json.Linq;
 
 namespace Microsoft.Bot.Builder.ComposerBot.Json
 {
+    /// <summary>
+    /// A storage layer that uses an in-memory dictionary.
+    /// </summary>
     public class BotManager : IBotManager
     {
         private static readonly object Locker = new object();
@@ -71,7 +74,7 @@ namespace Microsoft.Bot.Builder.ComposerBot.Json
 
         public void SetCurrent(string botDir)
         {
-            IStorage storage = new MemoryStorage();
+            IStorage storage = new MyStorage();
             var userState = new UserState(storage);
             var conversationState = new ConversationState(storage);
             var inspectionState = new InspectionState(storage);
@@ -91,7 +94,7 @@ namespace Microsoft.Bot.Builder.ComposerBot.Json
               .UseLanguageGeneration(resourceExplorer, "common.lg")
               .Use(new RegisterClassMiddleware<IConfiguration>(Config))
               .Use(new InspectionMiddleware(inspectionState, userState, conversationState, credentials));
-              
+
             adapter.OnTurnError = async (turnContext, exception) =>
             {
                 await turnContext.SendActivityAsync(exception.Message).ConfigureAwait(false);

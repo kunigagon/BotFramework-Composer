@@ -6,7 +6,7 @@
     <Rule Id="UseAsyncSuffix" Action="Error" />
     <Rule Id="UseConfigureAwait" Action="Error" />
   </Rules>
-  
+
   <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.Features" RuleNamespace="Microsoft.CodeAnalysis.CSharp.Features">
     <Rule Id="IDE0003" Action="None" />
   </Rules>
@@ -120,7 +120,7 @@
     <Rule Id="SA1408" Action="Error" />
     <Rule Id="SA1410" Action="Error" />
     <Rule Id="SA1411" Action="Error" />
-    <Rule Id="SA1412" Action="Error" />
+    <!-- Rule Id="SA1412" Action="Error" /-->
     <Rule Id="SA1413" Action="None" /> <!-- UseTrailingCommasInMultiLineInitializers-->
     <Rule Id="SA1101" Action="None" /> <!-- PrefixLocalCallsWithThis -->
     <Rule Id="SA1129" Action="None" /> <!-- DoNotUseDefaultValueTypeConstructor-->
@@ -189,11 +189,11 @@
   </Rules>
 
   <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
-	<Rule Id="CA1062" Action="None" /> <!-- ValidateArgumentsOfPublicMethods -->	
+	<Rule Id="CA1062" Action="None" /> <!-- ValidateArgumentsOfPublicMethods -->
   </Rules>
 
   <Rules AnalyzerId="Microsoft.NetCore.Analyzers" RuleNamespace="Microsoft.NetCore.Analyzers">
 	<Rule Id="CA1303" Action="None" /> <!-- DoNotPassLiteralsAsLocalizedParameters -->
-  </Rules>  
+  </Rules>
 
 </RuleSet>
